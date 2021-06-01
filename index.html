@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Чили</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/draggabilly.pkgd.min.js"></script>
+  <script src="js/db.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Субрегионы</div>
+</div>
+<div class="main">
+  <div class="task">
+    <div class="lock hidden" style="z-index: 3"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Определите, к какому чилийскому винодельческому региону пренадлежит субрегион и перетащите его на соответствующую иконку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page any left" style="z-index: 1">
+      <div class="any__grid">
+        <div class="any__zone">
+          <div class="any__column" style="background-color: #FFC09F">Атакама</div>
+          <div class="any__column" style="background-color: #c2967a">Центральная Долина</div>
+          <div class="any__column" style="background-color: #846653">Южный регион</div>
+        </div>
+        <div class="any__move"></div>
+      </div>
+      <div class="button" onclick="scoreButton(0)">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden" style="z-index: 3"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Выберите подходящие ноты для сорта Карменер.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page one left" style="z-index: 1">
+      <div class="one__grid">
+        <div class="one__categories"></div>
+        <div class="one__bottle"></div>
+      </div>
+      <div class="button" onclick="scoreButton(1);sortOneScore()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden" style="z-index: 3"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Поставьте в правильном порядке выдержку чилийских вин.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page y left" style="z-index: 1">
+      <div class="y__grid">
+        <div class="y__databox">
+          <div class="y__data" style="background-color: #c2967a">1 год</div>
+          <div class="y__data" style="background-color: #977560">2-3 года</div>
+          <div class="y__data" style="background-color: #745a4a">4-5 лет</div>
+          <div class="y__data" style="background-color: #534135">6+ лет</div>
+        </div>
+        <div class="y__movebox">
+          <div class="y__move" style="top: 0">Special</div>
+          <div class="y__move" style="top: 60px">Gran Reserva</div>
+          <div class="y__move" style="top: 120px">Reserva</div>
+          <div class="y__move" style="top: 180px">Corriente</div>
+        </div>
+      </div>
+      <div class="button" onclick="scoreButton(2);sortYScore()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<script src="js/sort_any.js"></script>
+<script src="js/sort_one.js"></script>
+<script src="js/sort_y.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
